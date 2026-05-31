@@ -1,0 +1,284 @@
+#pragma once
+
+#include "Includes.h"
+
+namespace Offset
+{
+
+
+	//int MyTeamID = 0;
+
+	const DWORD GWorld = 0x8d8a10c + 0x3C;// 
+	const DWORD GName = 0x8a5dfe8 + 0x88;
+
+
+	const DWORD IPADVIEWOFFSET = 0x5A88424;
+
+
+	const DWORD GameState = 0x13c; //updated
+	const DWORD ElapsedTime = 0x348; //int ElapsedTime;//[Offset:
+	const DWORD NoneAIGameTime = 0x7fc; //updated
+	const DWORD AlivePlayerNum = 0x7f4;// int AlivePlayerNum;//[Offset:
+	const DWORD PlayerNum = 0x554;// int PlayerNum;//[Offset:
+	//extern INT MyTeamID;
+	const DWORD AliveTeamNum = 0x7f8; //int AliveTeamNum;//[Offset:
+	const DWORD bNoAliveHumanPlayer = 0x77c;//[Offset: 0x7a0, Size: 4]
+	const DWORD PlayerNumPerTeam = 0xaec;// int PlayerNumPerTeam;//[Offset:
+	const DWORD PlayerAddonCount = 0xedc;//[Offset: 0x7a0, Size: 4]
+	const DWORD CircleLessenTo = 0x7b4;//[Offset: 0x7a0, Size: 4]
+	const DWORD BlueCircle = 0x48c;//[Offset: 0x7a0, Size: 4]
+	const DWORD WhiteCircle = 0x1d8;//[Offset: 0x7a0, Size: 4]
+	const DWORD AirAttackArea = 0x4ac;//[Offset: 0x7a0, Size: 4]
+	const DWORD GameModeID = 0x6c; // FString GameModeID;//[Offset:
+	const DWORD CurCircleWave = 0x778; // int CurCircleWave;//[Offset:
+	const DWORD CirclePain = 0x4a4;    //float CirclePain;//[Offset:
+	const DWORD MarkMgr = 0xef8;//[Offset: 0x7a0, Size: 4]
+	const DWORD bIsTrainingMode = 0x582;//[Offset: 0x7a0, Size: 4]
+	const DWORD bIsOutsideBlueCircle = 0x7ac;// bool bIsOutsideBlueCircle;//(ByteOffset: 
+	const DWORD GameReplayType = 0x740;//int GameReplayType;//[Offset:
+
+	extern struct Vector3 {
+		float x = 0;
+		float y = 0;
+		float z = 0;
+	};
+	const DWORD Position = 0x150;
+	struct playerData
+	{
+		DWORD Address, Pose, World;
+		Vector3 Position;
+		int Status, TeamID, Health, Distance;
+		int AlivePlayers = 0;
+		int TimeRemind = 0;
+		int AliveTeams = 0;
+		int RealPls = 0;
+		int ZoneID = 0;
+		int MyTeamID = 0;
+		int GameID = 0;
+		bool IsRobot;
+		bool IsDead;
+		std::string Name, Type, weapon, Nation;
+	};
+
+	const DWORD PersistentLevel = 0x20;
+
+	const DWORD NetDriver = 0x24;
+	const DWORD ServerConnection = 0x60;
+	const DWORD PlayerController = 0x20;//10292;
+	const DWORD AcknowledgedPawn = 0x360;//0x330;
+	const DWORD STExtraBaseCharacter = 0x1c28;
+	const DWORD EncryptedActors_Offset = 0x334;
+	const DWORD EntityList = 0x70; //m
+	const DWORD EntityCount = EntityList + 4; //m
+
+	const DWORD RootComponent = 0x150; //324;
+
+	// namespace Player 
+	const DWORD CurrentStates = 0xb48;//uint64 CurrentStates;//[Offset: 0xb48, Size: 8] 2.8
+	const DWORD IsDead = 0xa1c;///bool bDead;//(ByteOffset: 0, ByteMask: 1, FieldMask: 1)[Offset: 0xa1c, Size: 0x1]
+	const DWORD TeamId = 0x6b4;//1648;
+	//const DWORD PlayerUID = 0x69c;//1648;
+	const DWORD PoseState = 0x1034;//byte PoseState;//[Offset: ;
+	const DWORD IsBot = 0x74d; //bool bIsAI
+	const DWORD Name = 0x680;//FString PlayerName;//[Offset:;
+	const DWORD Status = 0x68c; // Class:FString PlayerName;//[Offset:
+	const DWORD Nation = 0x774;//1608;
+	const DWORD Health = 0xa04;	// float Health;//[Offset:
+	const DWORD HealthMax = 0xa08; // float HealthMax;//[Offset:
+	const DWORD weaponOffset = 0x3fc; // STExtraWeapon* CurrentWeapon;
+	///
+	const DWORD NearDeathBreath = 0x12c0; // float NearDeathBreath;//[Offset
+	const DWORD NearDeatchComponent = 0x12ac; // NearDeatchComponent;//[Offset: 
+	const DWORD BreathMax = 0x104;
+
+	const DWORD CharacterMovement = 0x14b0;//CharacterMovementComponent* CharacterMovement;//[Offset:;
+	const DWORD ControlRotation = 0x324;//Rotator ControlRotation;//[Offset: ;
+	const DWORD LastUpdateVelocity = 0x250;//Vector LastUpdateVelocity;//[Offset: ;
+	const DWORD  ReplicatedMovement = 0x78;         /////////////messing 2.0
+	const DWORD Velocity = 0x2fc;//Vector Velocity;//[Offset: ;
+
+	const DWORD ComponentVelocity = 0x1a0;// Vector ComponentVelocity;//[Offset: 0x1a0, Size: 12]
+	const DWORD  CurrentVehicle = 0xa3c; // CurrentVehicle;//[Offset: 
+
+	const DWORD RelativeLocation = 0x150;//Vector RelativeLocation;//[Offset: ;
+	const DWORD RelativeRotation = 0x124;//RelativeRotation;//[Offset;
+	//const DWORD Position = 0x150;
+	const DWORD IsVisible = 0x1bc; // , bool bVisible;//(ByteOffset: 0, ByteMask: 1, FieldMask: 1)[Offset:
+
+	// Bone
+	const DWORD Mesh = 0x34c;//1496;
+	const DWORD BodyAddv = 0x140;
+	const DWORD MinLOD = 0x63c;//MinLOD;//[Offset;
+
+	// Camera
+	const DWORD PlayerCameraManager = 0x354;//0x340;
+	const DWORD CameraCache = 0x374;//0x350;
+	const DWORD POV = 0x10;
+	const DWORD Location = 0x0;
+	const DWORD Rotation = 0x18;
+	const DWORD FOV = 0x24;
+
+	const DWORD ThirdPersonCameraComponent = 0x13dc; // CameraComponent* ThirdPersonCameraComponent;//[Offset: 0x132c, Size: 4]
+	const DWORD ScopeCameraComp = 0x13ec; //CameraComponent* ScopeCameraComp;//[Offset: 0x133c, Size: 4]
+	//Weapon
+
+	const DWORD CurrentReloadWeapon = 0x2178;  //
+	const DWORD CurrentWeapon = 0x1c14;  //
+	const DWORD ShootWeaponComponent = 0xb44; // STExtraShootWeaponComponent* ShootWeaponComponent;//[Offset: 0xb18, Size: 4]
+	const DWORD OwnerShootWeapon = 0x234; // Class: STExtraShootWeaponComponent.WeaponLogicBaseComponent.ActorComponent.Object ->STExtraShootWeapon* OwnerShootWeapon;//[Offset: 0x194, Size: 4]
+	const DWORD CurBulletNumInClip = 0xb58; // int CurBulletNumInClip;//[Offset: 
+	const DWORD CurMaxBulletNumInOneClip = 0xb6c; // int CurMaxBulletNumInOneClip;//[Offset: 
+
+
+	const DWORD ShootWeaponEntity = 0xc70; // ShootWeaponEntity* ShootWeaponEntity;//[Offset: 
+	const DWORD ShootWeaponEffectComp = 0xc7c; // 
+
+	//No Shake
+	const DWORD CameraShakeInnerRadius = 0x19c;
+	const DWORD CameraShakeOuterRadius = 0x1a0;
+	const DWORD  CameraShakFalloff = 0x14c;
+	const DWORD  bDrawDebug = 0x6c0;
+	const DWORD  CharacterOverrideAttrs = 0xe18;
+
+	////msing///////
+
+	// Instant hit
+	const DWORD BulletMomentum = 0x53c;
+	const DWORD DamageImpulse = 0x6ac;
+	const DWORD MaxDamageRate = 0x5f8;
+	const DWORD RangeModifier = 0x560;
+	const DWORD DropDuration = 0xc40;
+	const DWORD BulletRange = 0x548;
+	const DWORD BaseImpactDamage = 0x534;
+	const DWORD VehicleDamageScale = 0x538;
+	const DWORD ExtraHitPerformScale = 0x9e4;
+	const DWORD  LaunchGravityScale = 0x34c;
+	//Rapid Fire
+	const DWORD ShootInterval = 0x434;
+	const DWORD BulletFireSpeed = 0x408;
+	const DWORD bHasSingleFireMode = 0x480;
+	const DWORD bHasAutoFireMode = 0x481;//	bool bHasSingleFireMode;//(ByteOffset: 0, ByteMask: 1, FieldMask: 255)[Offset: 0x474, Size: 1] 	
+	const DWORD  BulletNumSingleShot = 0x4b8;//bool bHasAutoFireMode;//(ByteOffset: 0, ByteMask: 1, FieldMask: 255)[Offset: 0x475, Size: 1]
+	const DWORD  bHasBurstFireMode = 0x482;//bool bHasAutoFireMode;//(ByteOffset: 0, ByteMask: 1, FieldMask: 255)[Offset: 0x475, Size: 1]
+	const DWORD  BurstShootInterval = 0x4b0; //bool bHasBurstFireMode;//(ByteOffset: 0, ByteMask: 1, FieldMask: 255)[Offset: 0x476, Size: 1]
+	const DWORD ExtraShootInterval = 0x430;
+	const DWORD ReloadRate = 0x6f0;
+	const DWORD CrossHairBurstSpeed = 0x944;
+	const DWORD CrossHairBurstIncreaseSpeed = 0x948;
+
+	///Smal Cross Hair
+	const DWORD CrossHairInitialSize = 0x940;
+	const DWORD WeaponOverrideAttrs = 0x2208;
+
+	// NoRecoil
+	const DWORD AccessoriesVRecoilFactor = 0x8c8;
+	const DWORD AccessoriesHRecoilFactor = 0x8cc;
+	const DWORD AccessoriesRecoveryFactor = 0x8d0;
+	const DWORD ShotGunCenterPerc = 0x924;
+	const DWORD ShotGunVerticalSpread = 0x928;
+	const DWORD  ShotGunHorizontalSpread = 0x92c;
+
+	const DWORD  GameDeviationFactor = 0x930;
+	const DWORD   GameDeviationAccuracy = 0x934;
+	const DWORD   AccessoriesDeviationFactor = 0x938;
+	const DWORD   VehicleWeaponDeviationAngle = 0x94c;
+	const DWORD   RecoilKickADS = 0x9e0;
+	const DWORD   TraceDistance = 0x5ac;
+
+	//Vehicle
+
+	const DWORD VehicleCommon = 0x77c;
+	const DWORD lastForwardSpeed = 0x800;
+	const DWORD HP = 0x1e4;
+	const DWORD IsEngineStarted = 0x719; //bool bIsEngineStarted;//(ByteOffset: 
+	const  DWORD HPMax = 0x1e0;		// Class: float HPMax;//[Offset: 0x118,
+	const  DWORD FuelMax = 0x23c;	// Class: float FuelMax;//[Offset: 0x130,
+	const  DWORD Fuel = 0x240;
+	const  DWORD VehicleMovement = 0x10c0;  //STExtraVehicleMovementComponent4W* VehicleMovement;//[Offset: 0x1078, Size: 4]
+
+
+	//loot box
+
+	const DWORD PickUpDataList = 0x6a0;
+	const DWORD boxItemsCount = 0x6a4;
+	const DWORD PickUpItemData = 0x6a0; // PickUpItemData[] PickUpDataList;//[Offset: 
+	const DWORD PlayerUID = 0x69c;//1648;
+
+	namespace STExtraPlayerCharacter {
+		constexpr auto STPlayerController = 0x2f7c;
+	}
+	namespace PlayerController1 {
+		constexpr auto PlayerCameraManager = 0x374;
+		constexpr auto MyHUD = 0x36c; // HUD* MyHUD;//[Offset: 
+
+	}
+	const DWORD HitPerform = 0x410;
+
+	namespace PlayerCameraManager1 {
+		constexpr auto CameraCache = 0x370; // CameraCache;//[Offset
+	}
+
+	//From Local  Player
+	const DWORD CharacterMovementComponent = 0x350;//	CharacterMovementComponent* CharacterMovement;//[Offset: 0x344, Size: 4]  
+	const DWORD  MoveAntiCheatComponent = 0x1008;//MoveAntiCheatComponent* MoveAntiCheatComponent;//[Offset: 
+	const DWORD  ParachuteComponent = 0x1018;//CharacterParachuteComponent* ParachuteComponent;//[Offset: 
+	const DWORD bShouldDrowningHurt = 0x1df0;//bool bShouldDrowningHurt;//(ByteOffset: 
+	const DWORD MaxCrouchSpeed = 0x1d8c;
+	const DWORD MaxProneSpeed = 0x1d90;
+	const DWORD MaxSprintSpeed = 0x1d94;
+	const DWORD MaxSprintCrouchSpeed = 0x1d98;
+	const DWORD MaxSwimSpeed = 0x1ad4;
+	const DWORD HighWalkSpeed = 0x1ab8; //float HighWalkSpeed;//[Offset: 0x1dc8, 
+	const DWORD  SpeedValue = 0x63c; //float SpeedValue;//[Offset: 0x63c, 
+
+
+	const DWORD  StandHalfHeight = 0x1f14;//float StandHalfHeight;//[Offset: 0x1f14, 
+	const DWORD  CrouchHalfHeight = 0x1f18;//float CrouchHalfHeight;//[Offset: 0x1f18, Size: 0x4]
+	const DWORD  ProneHalfHeight = 0x1f1c;//float ProneHalfHeight;//[Offset: 0x1f1c, 
+	const DWORD  StandRadius = 0x1f24;//float StandRadius;//[Offset: 0x1f24, 
+
+	const DWORD  HearRadius = 0x1288;//float HearRadius;//[Offset: 0x117c, Size: 4]
+	const DWORD  PickUpRadius = 0x14b8;//	float PickUpRadius;//[Offset: 0x1348, Size: 4]
+
+
+
+
+	//Force TPP
+	const DWORD  bIsFPPOnVehicle = 0xfb8;// = 0x1a24;	bool bIsFPPOnVehicle;//(ByteOffset: 0, ByteMask: 1, FieldMask: 255)[Offset: 0xeb0, Size: 1]
+	const DWORD  IsNetFPP = 0x16a8;// = 0x1a24;	bool IsNetFPP;//(ByteOffset: 0, ByteMask: 1, FieldMask: 255)[Offset: 0x13f0, Size: 1]
+	const DWORD  IsFPP = 0x10b8;// = 0x1a24;bool IsFPP;//(ByteOffset: 0, ByteMask: 1, FieldMask: 255)[Offset: 0x13f1, Size: 1]
+	const DWORD  ScopeFov = 0x1398;// = float ScopeFov;//[Offset: 0x1398, 
+	const DWORD  IsGameModeFpp = 0x618;
+	const DWORD  GameModeState = 0x740; // FName GameModeState;//[Offset: 
+
+
+	// From CharacterMovementComponent.PawnMovementComponent.NavMovementComponent.MovementComponent.ActorComponent 
+	const DWORD GravityScale = 0x34c;//float GravityScale;//[Offset: 0x134, Size: 4]
+	const DWORD MaxStepHeight = 0x138;//float GravityScale;//[Offset: 0x134, Size: 4]
+	const DWORD JumpZVelocity = 0x13c; //float GravityScale;//[Offset: 0x134, Size: 4]
+	const DWORD JumpOffJumpZFactor = 0x140;//float GravityScale;//[Offset: 0x134, Size: 4]
+	const DWORD GroundFriction = 0x170;//float GravityScale;//[Offset: 0x134, Size: 4] //set to 1 
+
+
+
+
+	//From Parachute Compnent
+	const DWORD  CurrentFallSpeed = 0x14c;//float SpeedValue;//[Offset: 0xb58, Size: 4]
+	const DWORD  AllowMaxDiatanceSqAtServer = 0x2a0;//float SpeedValue;//[Offset: 0xb58, Size: 4]
+	const DWORD  AllowMaxDistanceSqInParachuteOpen = 0x2a4;//float SpeedValue;//[Offset: 0xb58, Size: 4]
+	const DWORD  MaxZAllowDistance = 0x2ac;//float SpeedValue;//[Offset: 0xb58, Size: 4]
+	//Will Check
+	const DWORD  PawnBackpackCapacity = 0x1e78;
+	const DWORD  IsInWater = 0x17e0;//	bool IsInWater;//(ByteOffset: 0, ByteMask: 1, FieldMask: 255)[Offset: 0x14bc, Size: 1]
+	const DWORD  OutofWaterZ = 0x1e4;//CharacterMovementComponent.PawnMovementComponent.NavMovementComponent.MovementComponent.ActorComponent
+
+	//Fast Weapon Swithch
+	const DWORD  SwitchWeaponSpeedScale = 0x1e7c;// = 0x1a24;
+
+
+	const DWORD  bIsGunADS = 0xbd9;// = 0x1a24;
+
+
+
+
+}
