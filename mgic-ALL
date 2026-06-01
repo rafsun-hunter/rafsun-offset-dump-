@@ -1,0 +1,75 @@
+Magic ShellCode:GL/KR/TW
+Pattern Information
+{
+
+Pattern        : 66 0F 7E ? D0 02 00 00 C7 45 78 68
+Verify Pattern : 56
+First Cmp      : F0
+Second Cmp     : 3F
+
+
+}
+
+Offset
+{
+#define Offset_CurrentWeapon 0x20CC
+}
+
+ShellCode
+{
+0xC7, 0x45, 0x78, 0x00, 0x00, 0x00, 0x00,                        
+0x83, 0x3D, 0x00, 0x00, 0x00, 0x00, 0x01,                        
+0x74, 0x0E,                                                      
+0x60,                                                            
+0x8B, 0x5D, 0x50,                                                
+0x8B, 0x53, 0x18,                                                
+0x8A, 0x02,                                                      
+0x3C, 0xF0,                                            
+0x74, 0x02,                                                      
+0x61,                                                            
+0xC3,                                                            
+0x8A, 0x42, 0x01,                                                
+0x3C, 0x3F,                                               
+0x75, 0x14,                                                      
+0xC7, 0x83, 0x2D0, 0x02, 0x00, 0x00, 0x45, 0x4D, 0x49, 0x52,     
+0xC7, 0x83, 0x2D4, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,     
+0xEB, 0xE1
+}
+
+Magic ShellCode: VN
+Pattern Information
+{
+
+Pattern        : 66 0F 7E ? D0 02 00 00 C7 45 78 C8
+Verify Pattern : 58
+First Cmp      : F0
+Second Cmp     : 5F
+
+
+}
+
+Offset
+{
+
+}
+
+ShellCode
+{
+0xC7, 0x45, 0x78, 0x00, 0x00, 0x00, 0x00,                        
+0x83, 0x3D, 0x00, 0x00, 0x00, 0x00, 0x01,                        
+0x74, 0x0E,                                                      
+0x60,                                                            
+0x8B, 0x5D, 0x50,                                                
+0x8B, 0x53, 0x18,                                                
+0x8A, 0x02,                                                      
+0x3C, 0xF0,                                            
+0x74, 0x02,                                                      
+0x61,                                                            
+0xC3,                                                            
+0x8A, 0x42, 0x01,                                                
+0x3C, 0x5F,                                               
+0x75, 0x14,                                                      
+0xC7, 0x83, 0x2D0, 0x02, 0x00, 0x00, 0x45, 0x4D, 0x49, 0x52,     
+0xC7, 0x83, 0x2D4, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,     
+0xEB, 0xE1
+}
